@@ -1,0 +1,309 @@
+:root {
+  --navy: #10243e;
+  --cloud: #f4f7fa;
+  --amber: #f2a541;
+
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--navy);
+  background-color: var(--cloud);
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  max-width: 62ch;
+}
+
+a {
+  color: inherit;
+}
+
+/* Accessibility helpers */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--amber);
+  color: var(--navy);
+  font-weight: 700;
+  z-index: 200;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+}
+
+/* ---------- Header / navigation ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--navy);
+  color: var(--cloud);
+  border-bottom: 3px solid var(--amber);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.6rem 1.25rem;
+}
+
+.nav-brand {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--cloud);
+  transition: color 0.2s ease;
+}
+
+.nav-brand:hover {
+  color: var(--amber);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--cloud);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background-color: var(--navy);
+  color: var(--cloud);
+  padding: 4rem 0 4.5rem;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  border-left: 6px solid var(--amber);
+  overflow-wrap: anywhere;
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  padding-left: calc(1rem + 6px);
+}
+
+.button {
+  display: inline-block;
+  margin-left: calc(1rem + 6px);
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--navy);
+  background-color: var(--amber);
+  border: 2px solid var(--amber);
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--amber);
+  transform: translateY(-2px);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background-color: var(--navy);
+  color: var(--cloud);
+}
+
+.section h2 {
+  font-size: 1.9rem;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  border-bottom: 4px solid var(--amber);
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Skills ---------- */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills-list li {
+  padding: 0.6rem 1.1rem;
+  font-weight: 600;
+  color: var(--cloud);
+  border: 2px solid var(--amber);
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.skills-list li:hover {
+  background-color: var(--amber);
+  color: var(--navy);
+  transform: translateY(-3px);
+}
+
+/* ---------- Projects ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.card {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 2px solid var(--navy);
+  border-top: 8px solid var(--amber);
+  border-radius: 6px;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+.card:hover {
+  background-color: var(--navy);
+  color: var(--cloud);
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 var(--amber);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 1.5rem 0;
+  background-color: var(--navy);
+  color: var(--cloud);
+  border-top: 3px solid var(--amber);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 600px) {
+  .hero {
+    padding: 6rem 0 6.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3.6rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
